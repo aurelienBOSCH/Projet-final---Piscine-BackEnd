@@ -15,6 +15,7 @@ private int idMateriel;
 private @NonNull String nomMateriel;
 private int qtMateriel;
 
-@ManyToOne @JoinColumn(name="idActivite", nullable = false)
+@ManyToOne 
+@JoinColumn(name="idActivite")
 private Activite activite;
 }
