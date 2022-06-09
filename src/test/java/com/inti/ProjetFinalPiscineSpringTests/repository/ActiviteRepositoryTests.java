@@ -30,16 +30,17 @@ public class ActiviteRepositoryTests
 	Activite a1, a2;
 	List<Materiel> listeMateriels = new ArrayList<Materiel>();
 	List<Personne> listePersonnes = new ArrayList<Personne>();
-	Planning idPlanning = new Planning();
+	Planning planning = new Planning();
 	
 	@BeforeEach
 	public void setUp()
 	{
 		
+		
 		a1 = new Activite();
-		a2 = new Activite(48516, "Aquabike", 20, LocalDateTime.of(2022, 06, 9, 9, 30), LocalDateTime.of(2022, 06, 9, 11, 30), listePersonnes, listeMateriels, idPlanning);
+		a2 = new Activite(48516, "Aquabike", 20, LocalDateTime.of(2022, 06, 9, 9, 30), LocalDateTime.of(2022, 06, 9, 11, 30), listePersonnes, listeMateriels, planning);
 	}
-	
+
 	@Test
 	public void testGetActiviteFalse()
 	{
