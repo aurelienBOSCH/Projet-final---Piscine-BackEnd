@@ -42,7 +42,7 @@ public class ActiviteRepositoryTests
 	}
 
 	@Test
-	public void testGetActiviteFalse()
+	public void testGetActiviteTrue()
 	{
 		Activite toGetActiviteFalse = ar.getReferenceById(48516);
 		assertThat(toGetActiviteFalse).isNotNull();

@@ -31,7 +31,7 @@ private List<Personne> listePersonnes;
 
 
 @OneToMany(mappedBy="activite", targetEntity = Materiel.class, cascade = CascadeType.ALL)
-private List<Materiel> listeMateriel;
+private List<Materiel> listeMateriels;
 
 @ManyToOne
 @JoinColumn(name = "idPlanning")

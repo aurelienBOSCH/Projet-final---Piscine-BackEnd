@@ -22,5 +22,5 @@ private @NonNull LocalDateTime horaireFinJournee;
 
 
 @OneToMany(mappedBy="planning", targetEntity = Activite.class, cascade = CascadeType.ALL)
-private List<Activite> activite;
+private List<Activite> listeActivites;
 }
