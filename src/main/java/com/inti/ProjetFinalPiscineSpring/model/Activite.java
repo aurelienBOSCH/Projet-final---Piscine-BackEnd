@@ -4,6 +4,9 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.*;
+
+
+
 import lombok.*;
 
 @Entity
@@ -26,10 +29,10 @@ private @NonNull LocalDateTime horaireFin;
 			inverseJoinColumns = @JoinColumn(name="idPersonne"))
 private List<Personne> listePersonnes;
 
-@OneToMany(mappedBy="activite")
-private List<Materiel> materiel;
+@OneToMany(mappedBy="activite", targetEntity = Materiel.class, cascade = CascadeType.ALL)
+private List<Materiel> listeMateriel;
 
-@OneToOne
+@ManyToOne
 @JoinColumn(name = "idPlanning")
-private Planning idPlanning;
+private Planning planning;
 }

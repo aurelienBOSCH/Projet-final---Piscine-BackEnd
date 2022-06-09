@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.*;
+
+
 import lombok.*;
 
 @Entity
@@ -18,6 +20,6 @@ private int idPlanning;
 private @NonNull LocalDateTime horaireDebutJournee;
 private @NonNull LocalDateTime horaireFinJournee;
 
-@OneToMany(mappedBy="planning")
+@OneToMany(mappedBy="planning", targetEntity = Activite.class, cascade = CascadeType.ALL)
 private List<Activite> activite;
 }
