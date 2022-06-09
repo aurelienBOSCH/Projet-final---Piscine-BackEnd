@@ -18,6 +18,6 @@ private int idPlanning;
 private @NonNull LocalDateTime horaireDebutJournee;
 private @NonNull LocalDateTime horaireFinJournee;
 
-@OneToMany(mappedBy="planning")
+@OneToMany(mappedBy="idPlanning")
 private List<Activite> activite;
 }
