@@ -9,7 +9,7 @@ import lombok.*;
 @Entity
 @Data
 @Table
-@AllArgsConstructor @NoArgsConstructor @RequiredArgsConstructor
+@AllArgsConstructor @NoArgsConstructor
 public class Activite
 {
 @Id
@@ -17,8 +17,8 @@ public class Activite
 private int idActivite;
 private String nomActivite;
 private int nbrPlaces;
-private @NonNull LocalDateTime horaireDebut;
-private @NonNull LocalDateTime horaireFin;
+private LocalDateTime horaireDebut;
+private LocalDateTime horaireFin;
 
 @ManyToMany
 @JoinTable(name= "Personne_Activite",
@@ -27,9 +27,10 @@ private @NonNull LocalDateTime horaireFin;
 private List<Personne> listePersonnes;
 
 @OneToMany(mappedBy="activite")
-private List<Materiel> materiel;
+private List<Materiel> listeMateriels;
 
 @OneToOne
 @JoinColumn(name = "idPlanning")
 private Planning idPlanning;
+
 }
