@@ -1,4 +1,4 @@
-package com.inti.ProjetFinalPiscineSpringTests.repository;
+package com.inti.ProjetFinalPiscineSpring.repository;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
