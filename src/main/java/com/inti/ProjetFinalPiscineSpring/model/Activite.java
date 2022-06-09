@@ -22,6 +22,7 @@ private String nomActivite;
 private int nbrPlaces;
 private LocalDateTime horaireDebut;
 private LocalDateTime horaireFin;
+private float prix;
 
 @ManyToMany
 @JoinTable(name= "Personne_Activite",

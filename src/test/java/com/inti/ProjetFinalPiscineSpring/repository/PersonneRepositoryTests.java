@@ -26,7 +26,7 @@ public class PersonneRepositoryTests
 	@Autowired
 	PersonneRepository personneRepository;
 	
-	Personne personne, personne2 , personne1;
+	Personne personne2 , personne1;
 	
 	@BeforeEach
 	public void setUp()
