@@ -38,7 +38,7 @@ public class ActiviteRepositoryTests
 		
 		
 		a1 = new Activite();
-		a2 = new Activite(48516, "Aquabike", 20, LocalDateTime.of(2022, 06, 9, 9, 30), LocalDateTime.of(2022, 06, 9, 11, 30), listePersonnes, listeMateriels, planning);
+		a2 = new Activite(48516, "Aquabike", 20, LocalDateTime.of(2022, 06, 9, 9, 30), LocalDateTime.of(2022, 06, 9, 11, 30), 0.00f ,listePersonnes, listeMateriels, planning);
 	}
 
 	@Test
