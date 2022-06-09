@@ -16,6 +16,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import org.hibernate.validator.constraints.UniqueElements;
 
 import lombok.AllArgsConstructor;
@@ -27,6 +29,7 @@ import lombok.RequiredArgsConstructor;
 @Data
 @Table
 @AllArgsConstructor @NoArgsConstructor //@RequiredArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer"})
 public class Personne
 {
 @Id
