@@ -57,10 +57,10 @@ public class ActiviteController
 	}
 	
 	@PutMapping("/setPlanningToActivity/{idActivite}/{idPlanning}")
-	public void setPlanningToActivity(@RequestBody Activite activite, @PathVariable int idActivite, @PathVariable int idPlanning)
+	public void setPlanningToActivity(@PathVariable int idActivite, @PathVariable int idPlanning)
 	{
 		Activite a1 = activiteRepository.getReferenceById(idActivite);
-		activiteRepository.SetPlanningToActivity(idActivite, idPlanning);
+		activiteRepository.SetPlanningToActivity(a1.getIdActivite(), idPlanning);
 	}
 	
 	
