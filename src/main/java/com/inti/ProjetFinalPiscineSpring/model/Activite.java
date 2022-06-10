@@ -12,7 +12,7 @@ import lombok.*;
 @Entity
 @Data
 @Table
-@AllArgsConstructor @NoArgsConstructor @RequiredArgsConstructor
+@AllArgsConstructor @NoArgsConstructor
 public class Activite
 {
 @Id
@@ -20,8 +20,9 @@ public class Activite
 private int idActivite;
 private String nomActivite;
 private int nbrPlaces;
-private @NonNull LocalDateTime horaireDebut;
-private @NonNull LocalDateTime horaireFin;
+private LocalDateTime horaireDebut;
+private LocalDateTime horaireFin;
+private float prix;
 
 @ManyToMany
 @JoinTable(name= "Personne_Activite",
@@ -29,8 +30,9 @@ private @NonNull LocalDateTime horaireFin;
 			inverseJoinColumns = @JoinColumn(name="idPersonne"))
 private List<Personne> listePersonnes;
 
+
 @OneToMany(mappedBy="activite", targetEntity = Materiel.class, cascade = CascadeType.ALL)
-private List<Materiel> listeMateriel;
+private List<Materiel> listeMateriels;
 
 @ManyToOne
 @JoinColumn(name = "idPlanning")

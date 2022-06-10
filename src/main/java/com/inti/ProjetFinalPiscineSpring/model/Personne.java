@@ -46,7 +46,7 @@ private String nom;
 @Column(length = 50, nullable = false)
 private String prenom;
 
-@Column(length = 100, nullable = false, unique = true)
+@Column(length = 100, nullable = false/*, unique = true*/)
 @NotBlank(message = "Veuillez saisir un Nom d'Utilisateur non vide !")
 @Size(min = 3, max = 100, message = "Saisir au moins 3 caractères")
 //@UniqueElements(message = "Le nom d'utilisateur est déjà utilisé") POSE PROBLEME POUR LES TESTS
@@ -87,7 +87,7 @@ private List<Activite> listeActivites;
 public Personne(
 		@NotBlank(message = "Veuillez saisir un Nom non vide !") @Size(min = 3, max = 100, message = "Saisir au moins 3 caractères") String nom,
 		@NotBlank(message = "Veuillez saisir un Prenom non vide !") @Size(min = 3, max = 100, message = "Saisir au moins 3 caractères") String prenom,
-		@NotBlank(message = "Veuillez saisir un Nom d'Utilisateur non vide !") @Size(min = 3, max = 100, message = "Saisir au moins 3 caractères") @UniqueElements(message = "Le nom d'utilisateur est déjà utilisé") String username,
+		@NotBlank(message = "Veuillez saisir un Nom d'Utilisateur non vide !") @Size(min = 3, max = 100, message = "Saisir au moins 3 caractères") String username,
 		String password, @NotBlank(message = "Veuillez saisir une date valide !") Date dateNaissance,
 		@NotBlank(message = "Veuillez saisir une Adresse valide !") @Size(min = 20, max = 150, message = "Saisir au moins 3 caractères") String adresse,
 		@Pattern(regexp = "^0[1-9]{1}[\\.[0-9]{2}\\.[0-9]{2}]{2}$", message = "Saisir un téléphone au format xx.xx.xx.xx.xx") String telephone,
