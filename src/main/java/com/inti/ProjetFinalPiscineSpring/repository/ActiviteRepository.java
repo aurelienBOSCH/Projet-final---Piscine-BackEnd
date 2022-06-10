@@ -17,4 +17,9 @@ public interface ActiviteRepository extends JpaRepository<Activite, Integer>
 	@Query(value="Select a.* from activite a, personne p, personne_activite pa where a.id_activite = pa.id_activite and p.id=pa.id_personne and p.role='prof'and p.id=:id", nativeQuery = true)
 	List<Activite> GetListActivitiesPerProf(@Param("id") int id);
 	
+	@Query(value="update activite a, planning p set a.id_planning=:id_planning where a.id_activite=:id_activite and a.horaire_debut >= p.horaire_debut_journee and a.horaire_fin <= p.horaire_fin_journee"
+		, nativeQuery = true)
+	void SetPlanningToActivity(@Param("id_activite") int idActivite, @Param("id_planning") int idPlanning);
+	
+	
 }

@@ -39,24 +39,33 @@ public class ActiviteController
 	
 	
 
-	@DeleteMapping ("/deleteActivity/{id}")
-	public void deleteActivity(@PathVariable int id) 
+	@DeleteMapping ("/deleteActivity/{idActivite}")
+	public void deleteActivity(@PathVariable int idActivite) 
 	{
-		 activiteRepository.deleteById(id);
+		 activiteRepository.deleteById(idActivite);
 	
 	}
 	
-	@GetMapping("/getActivity/{id}") 
+	@GetMapping("/getActivity/{idActivite}") 
 	public Activite getActivite(@PathVariable int id)
 	{
 		return activiteRepository.getReferenceById(id);
 	}
 	
-	@PutMapping("/updateActivity/{id}")
-	public void updateActivite(@RequestBody Activite activite, @PathVariable int id)
+	@PutMapping("/updateActivity/{idActivite}")
+	public void updateActivite(@RequestBody Activite activite, @PathVariable int idActivite)
 	{
-		Activite a1 = activiteRepository.getReferenceById(id);
+		Activite a1 = activiteRepository.getReferenceById(idActivite);
 	
 		activiteRepository.save(a1);
 	}
+	
+	@PutMapping("/setPlanningToActivity/{idActivite}/{idPlanning}")
+	public void setPlanningToActivity(@RequestBody Activite activite, @PathVariable int idActivite, @PathVariable int idPlanning)
+	{
+		Activite a1 = activiteRepository.getReferenceById(idActivite);
+		activiteRepository.SetPlanningToActivity(idActivite, idPlanning);
+	}
+	
+	
 }
