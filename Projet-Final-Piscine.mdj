@@ -61,9 +61,9 @@
 											"font": "Arial;13;1",
 											"left": 1005,
 											"top": 679,
-											"width": 114.8671875,
+											"width": 124.26171875,
 											"height": 13,
-											"text": "Matériel"
+											"text": "Materiel"
 										},
 										{
 											"_type": "LabelView",
@@ -96,7 +96,7 @@
 									"font": "Arial;13;0",
 									"left": 1000,
 									"top": 672,
-									"width": 124.8671875,
+									"width": 134.26171875,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGBQtB/ENW8wt0="
@@ -133,9 +133,9 @@
 											"font": "Arial;13;0",
 											"left": 1005,
 											"top": 702,
-											"width": 114.8671875,
+											"width": 124.26171875,
 											"height": 13,
-											"text": "-idMateriel: id",
+											"text": "-idMateriel: idMateriel",
 											"horizontalAlignment": 0
 										},
 										{
@@ -168,7 +168,7 @@
 											"font": "Arial;13;0",
 											"left": 1005,
 											"top": 717,
-											"width": 114.8671875,
+											"width": 124.26171875,
 											"height": 13,
 											"text": "-nomMateriel: string",
 											"horizontalAlignment": 0
@@ -185,7 +185,7 @@
 											"font": "Arial;13;0",
 											"left": 1005,
 											"top": 732,
-											"width": 114.8671875,
+											"width": 124.26171875,
 											"height": 13,
 											"text": "-qtMateriel: int",
 											"horizontalAlignment": 0
@@ -194,7 +194,7 @@
 									"font": "Arial;13;0",
 									"left": 1000,
 									"top": 697,
-									"width": 124.8671875,
+									"width": 134.26171875,
 									"height": 53
 								},
 								{
@@ -209,7 +209,7 @@
 									"font": "Arial;13;0",
 									"left": 1000,
 									"top": 750,
-									"width": 124.8671875,
+									"width": 134.26171875,
 									"height": 10
 								},
 								{
@@ -249,7 +249,7 @@
 							"containerChangeable": true,
 							"left": 1000,
 							"top": 672,
-							"width": 124.8671875,
+							"width": 134.26171875,
 							"height": 88,
 							"nameCompartment": {
 								"$ref": "AAAAAAGBQtB/ENW7zJY="
@@ -830,7 +830,7 @@
 											"top": 406,
 											"width": 185.70703125,
 											"height": 13,
-											"text": "-idPlanning: id",
+											"text": "-idPlanning: idPlanning",
 											"horizontalAlignment": 0
 										},
 										{
@@ -987,7 +987,7 @@
 											"top": 535,
 											"width": 141.99072265625,
 											"height": 13,
-											"text": "Activités"
+											"text": "Activite"
 										},
 										{
 											"_type": "LabelView",
@@ -1059,7 +1059,7 @@
 											"top": 558,
 											"width": 141.99072265625,
 											"height": 13,
-											"text": "-idActivite: id",
+											"text": "-idActivite: idActivite",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2568,7 +2568,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 957,
-									"top": 638,
+									"top": 637,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -2589,7 +2589,7 @@
 									"visible": null,
 									"font": "Arial;13;0",
 									"left": 964,
-									"top": 625,
+									"top": 624,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -2610,7 +2610,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 944,
-									"top": 665,
+									"top": 664,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -2630,7 +2630,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 915,
-									"top": 614,
+									"top": 613,
 									"width": 20.33154296875,
 									"height": 13,
 									"alpha": 1.028150276815638,
@@ -2653,7 +2653,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 942,
-									"top": 615,
+									"top": 614,
 									"height": 13,
 									"alpha": 0.7853981633974483,
 									"distance": 40,
@@ -2674,7 +2674,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 917,
-									"top": 649,
+									"top": 647,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 25,
@@ -2694,7 +2694,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 975,
-									"top": 651,
+									"top": 649,
 									"width": 14.82177734375,
 									"height": 13,
 									"alpha": -0.5235987755982988,
@@ -2716,7 +2716,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 986,
-									"top": 638,
+									"top": 636,
 									"height": 13,
 									"alpha": -0.7853981633974483,
 									"distance": 40,
@@ -2736,7 +2736,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 974,
-									"top": 678,
+									"top": 676,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 25,
@@ -2781,7 +2781,7 @@
 								"$ref": "AAAAAAGBQtCR6dZeQU8="
 							},
 							"lineStyle": 1,
-							"points": "904:634;999:683",
+							"points": "904:633;999:681",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGBQ2zWj8Zz4oM="
@@ -3725,7 +3725,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Matériel",
+					"name": "Materiel",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -3765,7 +3765,7 @@
 							},
 							"name": "idMateriel",
 							"visibility": "private",
-							"type": "id"
+							"type": "idMateriel"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4197,7 +4197,7 @@
 							},
 							"name": "idPlanning",
 							"visibility": "private",
-							"type": "id"
+							"type": "idPlanning"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -4235,7 +4235,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Activités",
+					"name": "Activite",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -4304,7 +4304,7 @@
 							},
 							"name": "idActivite",
 							"visibility": "private",
-							"type": "id"
+							"type": "idActivite"
 						},
 						{
 							"_type": "UMLAttribute",
