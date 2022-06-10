@@ -25,8 +25,8 @@ public class ActiviteController
 	@Autowired
 	ActiviteRepository activiteRepository;
 	
-	@GetMapping("/listActivitys") // dans une application REST on a tout intéret à utiliser cette méthode
-	public ResponseEntity<List<Activite>> getAllActivitys()
+	@GetMapping("/listActivities") // dans une application REST on a tout intéret à utiliser cette méthode
+	public ResponseEntity<List<Activite>> getAllActivities()
 	{
 		return new ResponseEntity<List<Activite>>(activiteRepository.findAll(), HttpStatus.OK);
 	}
@@ -37,27 +37,23 @@ public class ActiviteController
 		return new ResponseEntity<Activite>(activiteRepository.save(activite), HttpStatus.CREATED);
 	}
 	
-	
 
 	@DeleteMapping ("/deleteActivity/{idActivite}")
 	public void deleteActivity(@PathVariable int idActivite) 
 	{
 		 activiteRepository.deleteById(idActivite);
-	
 	}
 	
 	@GetMapping("/getActivity/{idActivite}") 
-	public Activite getActivite(@PathVariable int id)
+	public Activite getActivite(@PathVariable int idActivite)
 	{
-		return activiteRepository.getReferenceById(id);
+		return activiteRepository.getReferenceById(idActivite);
 	}
 	
-	@PutMapping("/updateActivity/{idActivite}")
-	public void updateActivite(@RequestBody Activite activite, @PathVariable int idActivite)
+	@PutMapping("/updateActivity")
+	public Activite updateActivite(@RequestBody Activite activite)
 	{
-		Activite a1 = activiteRepository.getReferenceById(idActivite);
-	
-		activiteRepository.save(a1);
+		return activiteRepository.save(activite);
 	}
 	
 	@PutMapping("/setPlanningToActivity/{idActivite}/{idPlanning}")

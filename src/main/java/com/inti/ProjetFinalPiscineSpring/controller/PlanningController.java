@@ -38,25 +38,22 @@ public class PlanningController
 	}
 	
 	
-
-	@DeleteMapping ("/deleteSchedule/{id}")
-	public void deleteSchedule(@PathVariable int id) 
+	@DeleteMapping ("/deleteSchedule/{idPlanning}")
+	public void deleteSchedule(@PathVariable int idPlanning) 
 	{
-		 planningRepository.deleteById(id);
+		 planningRepository.deleteById(idPlanning);
 	
 	}
 	
-	@GetMapping("/getSchedule/{id}") 
-	public Planning getPlanning(@PathVariable int id)
+	@GetMapping("/getSchedule/{idPlanning}") 
+	public Planning getPlanning(@PathVariable int idPlanning)
 	{
-		return planningRepository.getReferenceById(id);
+		return planningRepository.getReferenceById(idPlanning);
 	}
 	
-	@PutMapping("/updateSchedule/{id}")
-	public void updatePlanning(@RequestBody Planning planning, @PathVariable int id)
+	@PutMapping("/updateSchedule")
+	public Planning updatePlanning(@RequestBody Planning planning)
 	{
-		Planning p1 = planningRepository.getReferenceById(id);
-	
-		planningRepository.save(p1);
+		return planningRepository.save(planning);
 	}
 }

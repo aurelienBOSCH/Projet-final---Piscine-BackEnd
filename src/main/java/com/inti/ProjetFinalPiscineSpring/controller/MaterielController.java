@@ -37,26 +37,22 @@ public class MaterielController
 		return new ResponseEntity<Materiel>(materielRepository.save(materiel), HttpStatus.CREATED);
 	}
 	
-	
 
-	@DeleteMapping ("/deleteEquipment/{id}")
-	public void deleteEquipment(@PathVariable int id) 
+	@DeleteMapping ("/deleteEquipment/{idMateriel}")
+	public void deleteEquipment(@PathVariable int idMateriel) 
 	{
-		 materielRepository.deleteById(id);
-	
+		 materielRepository.deleteById(idMateriel);
 	}
 	
-	@GetMapping("/getEquipment/{id}") 
-	public Materiel getMateriel(@PathVariable int id)
+	@GetMapping("/getEquipment/{idMateriel}") 
+	public Materiel getMateriel(@PathVariable int idMateriel)
 	{
-		return materielRepository.getReferenceById(id);
+		return materielRepository.getReferenceById(idMateriel);
 	}
 	
-	@PutMapping("/updateEquipment/{id}")
-	public void updateMateriel(@RequestBody Materiel materiel, @PathVariable int id)
+	@PutMapping("/updateEquipment")
+	public Materiel updateMateriel(@RequestBody Materiel materiel)
 	{
-		Materiel m1 = materielRepository.getReferenceById(id);
-	
-		materielRepository.save(m1);
+		return materielRepository.save(materiel);
 	}
 }

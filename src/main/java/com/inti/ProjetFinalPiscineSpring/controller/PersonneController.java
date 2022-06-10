@@ -38,7 +38,6 @@ public class PersonneController
 		return new ResponseEntity<Personne>(personneRepository.save(personne), HttpStatus.CREATED);
 	}
 	
-	
 
 	@DeleteMapping ("/deletePerson/{id}")
 	public void deletePerson(@PathVariable int id) 
@@ -53,11 +52,9 @@ public class PersonneController
 		return personneRepository.getReferenceById(id);
 	}
 	
-	@PutMapping("/updatePerson/{id}")
-	public void updatePersonne(@RequestBody Personne personne, @PathVariable int id)
+	@PutMapping("/updatePerson")
+	public Personne updatePersonne(@RequestBody Personne personne)
 	{
-		Personne p1 = personneRepository.getReferenceById(id);
-	
-		personneRepository.save(p1);
+		return personneRepository.save(personne);
 	}
 }
