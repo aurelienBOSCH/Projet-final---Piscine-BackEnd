@@ -20,6 +20,9 @@ public interface ActiviteRepository extends JpaRepository<Activite, Integer>
 	@Query(value="update activite a, planning p set a.id_planning=:id_planning where a.id_activite=:id_activite and a.horaire_debut >= p.horaire_debut_journee and a.horaire_fin <= p.horaire_fin_journee"
 		, nativeQuery = true)
 	void SetPlanningToActivity(@Param("id_activite") int idActivite, @Param("id_planning") int idPlanning);
+
+	@Query(value="Select * from activite where id_planning is not null and nom_activite=:nom_activite and horaire_debut > NOW() order by horaire_debut", nativeQuery = true)
+	List<Activite> findAllActivitiesSameName(@Param("nom_activite") String nomActivite);
 	
 	
 }
