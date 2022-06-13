@@ -63,5 +63,12 @@ public class ActiviteController
 		activiteRepository.SetPlanningToActivity(a1.getIdActivite(), idPlanning);
 	}
 	
+	@GetMapping("/listActivitiesSameName/{nomActivite}") //penser à vérifier que l'activité soit dans un planning
+	public ResponseEntity<List<Activite>> getAllActivitiesSameName(@PathVariable String nomActivite)
+	{
+		return new ResponseEntity<List<Activite>>(activiteRepository.findAllActivitiesSameName(nomActivite), HttpStatus.OK);
+	}
+	
+	
 	
 }
