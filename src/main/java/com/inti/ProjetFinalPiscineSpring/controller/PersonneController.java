@@ -35,6 +35,7 @@ public class PersonneController
 	@PostMapping ("/savePerson")
 	public ResponseEntity<Personne> savePerson(@RequestBody Personne personne)
 	{
+		personne.setRole("client");
 		return new ResponseEntity<Personne>(personneRepository.save(personne), HttpStatus.CREATED);
 	}
 	
