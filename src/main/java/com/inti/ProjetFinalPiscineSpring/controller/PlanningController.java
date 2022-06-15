@@ -48,7 +48,7 @@ public class PlanningController
 	@GetMapping("/getSchedule/{idPlanning}") 
 	public Planning getPlanning(@PathVariable int idPlanning)
 	{
-		return planningRepository.getReferenceById(idPlanning);
+		return planningRepository.findById(idPlanning).get();
 	}
 	
 	@PutMapping("/updateSchedule")

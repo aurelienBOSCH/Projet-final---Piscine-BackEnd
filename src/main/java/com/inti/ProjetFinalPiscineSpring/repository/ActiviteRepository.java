@@ -24,5 +24,8 @@ public interface ActiviteRepository extends JpaRepository<Activite, Integer>
 	@Query(value="Select * from activite where id_planning is not null and nom_activite=:nom_activite and horaire_debut > NOW() order by horaire_debut", nativeQuery = true)
 	List<Activite> findAllActivitiesSameName(@Param("nom_activite") String nomActivite);
 	
+	@Query(value="Select distinct nom_activite from activite ", nativeQuery = true)
+	List<String> findListeEachActivityType();
+	
 	
 }

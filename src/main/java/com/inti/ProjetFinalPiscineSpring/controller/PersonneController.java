@@ -50,7 +50,7 @@ public class PersonneController
 	@GetMapping("/getPerson/{id}") 
 	public Personne getPersonne(@PathVariable int id)
 	{
-		return personneRepository.getReferenceById(id);
+		return personneRepository.findById(id).get();
 	}
 	
 	@PutMapping("/updatePerson")

@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.persistence.*;
 
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.*;
 
@@ -24,6 +24,7 @@ private LocalDateTime horaireDebut;
 private LocalDateTime horaireFin;
 private float prix;
 
+@JsonIgnore
 @ManyToMany
 @JoinTable(name= "Personne_Activite",
 			joinColumns = @JoinColumn(name="idActivite"),
@@ -37,4 +38,14 @@ private List<Materiel> listeMateriels;
 @ManyToOne
 @JoinColumn(name = "idPlanning")
 private Planning planning;
+
+@Override
+public String toString()
+{
+	return "Activite [idActivite=" + idActivite + ", nomActivite=" + nomActivite + ", nbrPlaces=" + nbrPlaces
+			+ ", horaireDebut=" + horaireDebut + ", horaireFin=" + horaireFin + ", prix=" + prix + ", listeMateriels="
+			+ listeMateriels + ", planning=" + planning + "]";
+}
+
+//on retire la liste de personnes pour ne pas avoir un JSON infini
 }

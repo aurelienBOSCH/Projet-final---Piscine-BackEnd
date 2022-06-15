@@ -1,6 +1,9 @@
 package com.inti.ProjetFinalPiscineSpring.model;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.*;
 
 @Entity
@@ -15,6 +18,7 @@ private int idMateriel;
 private @NonNull String nomMateriel;
 private int qtMateriel;
 
+@JsonIgnore
 @ManyToOne 
 @JoinColumn(name="idActivite")
 private Activite activite;
