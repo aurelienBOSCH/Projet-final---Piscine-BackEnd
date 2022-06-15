@@ -60,7 +60,7 @@ private String password;
 private Date dateNaissance;
 
 @NotBlank(message = "Veuillez saisir une Adresse valide !")
-@Size(min = 20, max = 150, message = "Saisir au moins 3 caractères")
+@Size(min = 10, max = 150, message = "Saisir au moins 10 caractères")
 @Column(length = 50, nullable = false)
 private String adresse;
 
@@ -70,7 +70,7 @@ private String adresse;
 private String telephone;
 
 @NotBlank(message = "Veuillez saisir un Email valide !")
-@Size(min = 20, max = 150, message = "Saisir au moins 3 caractères")
+@Size(min = 10, max = 150, message = "Saisir au moins 10 caractères")
 @Column(length = 50, nullable = false)
 private String email;
 

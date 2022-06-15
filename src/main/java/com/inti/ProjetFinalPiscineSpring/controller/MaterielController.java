@@ -47,7 +47,7 @@ public class MaterielController
 	@GetMapping("/getEquipment/{idMateriel}") 
 	public Materiel getMateriel(@PathVariable int idMateriel)
 	{
-		return materielRepository.getReferenceById(idMateriel);
+		return materielRepository.findById(idMateriel).get();
 	}
 	
 	@PutMapping("/updateEquipment")

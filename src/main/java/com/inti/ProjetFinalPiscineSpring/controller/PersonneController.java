@@ -35,6 +35,7 @@ public class PersonneController
 	@PostMapping ("/savePerson")
 	public ResponseEntity<Personne> savePerson(@RequestBody Personne personne)
 	{
+		personne.setRole("client");
 		return new ResponseEntity<Personne>(personneRepository.save(personne), HttpStatus.CREATED);
 	}
 	
@@ -49,7 +50,7 @@ public class PersonneController
 	@GetMapping("/getPerson/{id}") 
 	public Personne getPersonne(@PathVariable int id)
 	{
-		return personneRepository.getReferenceById(id);
+		return personneRepository.findById(id).get();
 	}
 	
 	@PutMapping("/updatePerson")

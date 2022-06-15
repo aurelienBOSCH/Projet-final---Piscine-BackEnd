@@ -44,11 +44,22 @@ public class ActiviteController
 		 activiteRepository.deleteById(idActivite);
 	}
 	
+//	@GetMapping("/getActivity/{idActivite}") 
+//	public Activite getActivite(@PathVariable int idActivite)
+//	{
+//		return activiteRepository.getReferenceById(idActivite);
+//	}
+	
 	@GetMapping("/getActivity/{idActivite}") 
 	public Activite getActivite(@PathVariable int idActivite)
 	{
-		return activiteRepository.getReferenceById(idActivite);
+		return activiteRepository.findById(idActivite).get();
 	}
+	//cette méthode comparée a celle d'au-dessus permet d'éviter l'erreur : 
+		//No serializer found for class org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor
+		//https://stackoverflow.com/questions/52656517/no-serializer-found-for-class-org-hibernate-proxy-pojo-bytebuddy-bytebuddyinterc
+	
+	//(en gros: avec cette méthode on accède directement à la base de donnée)
 	
 	@PutMapping("/updateActivity")
 	public Activite updateActivite(@RequestBody Activite activite)
@@ -63,10 +74,16 @@ public class ActiviteController
 		activiteRepository.SetPlanningToActivity(a1.getIdActivite(), idPlanning);
 	}
 	
-	@GetMapping("/listActivitiesSameName/{nomActivite}") //penser à vérifier que l'activité soit dans un planning
+	@GetMapping("/listActivitiesSameName/{nomActivite}")
 	public ResponseEntity<List<Activite>> getAllActivitiesSameName(@PathVariable String nomActivite)
 	{
 		return new ResponseEntity<List<Activite>>(activiteRepository.findAllActivitiesSameName(nomActivite), HttpStatus.OK);
+	}
+	
+	@GetMapping("/listEachActivityType")
+	public ResponseEntity<List<String>> getListeEachActivityType()
+	{
+		return new ResponseEntity<List<String>>(activiteRepository.findListeEachActivityType(), HttpStatus.OK);
 	}
 	
 	
